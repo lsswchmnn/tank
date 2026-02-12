@@ -12,7 +12,11 @@
 ## ToDo:
 
 Teile bestellen
+
 3D-Modell erstellen
+
 Schaltplan erstellen
+
 Lauffähiges Grundmodell bauen
+
 ...
