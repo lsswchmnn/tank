@@ -11,13 +11,13 @@
 
 ## ToDo:
 
-Teile bestellen
+- Teile bestellen
 
-3D-Modell erstellen
+- 3D-Modell erstellen
 
-Schaltplan erstellen
+- Schaltplan erstellen
 
-Lauffähiges Grundmodell bauen
+- Lauffähiges Grundmodell bauen
 
 
 ## Weitere Teile:
