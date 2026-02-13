@@ -1,10 +1,10 @@
 MAßE ALLGEMEIN:
 Maßstab: 1:?
-Kettenumlauf: 350mm
-Breite der Ketten: 20mm
+Kettenumlauf: 425mm
+Breite der Ketten: 15mm
 
 MAßE WANNE:
-Radstand (vorderstes und hinterstes Kettenrad): ca. 11cm, aber erstmal variabel
+Radstand (vorderstes und hinterstes Kettenrad): ca. 14cm, aber erstmal variabel
 Länge der Wanne: 15cm
 Breite der Wanne (exkl. Ketten): 10cm
 Gesamtbreite (inkl. Ketten): 14cm
@@ -15,5 +15,9 @@ KONSTRUKTION ALLGEMEIN:
 - Vorne Motoren, dann Motor Driver, hinten Akku
 
 RÄDER:
-- Antriebsräder vorne, direkt mit Motoren verbunden
-- Wie sollen die anderen Räder angebracht werden, dass sie sich frei drehen können?
+- Antriebsräder vorne, direkt mit Motoren verbunden. Räder dürfen nicht nur "raufgesteckt" sein, damit diese nicht durchdrehen. Außerdem müssen die Räder Zahnräder haben, damit die Ketten auch bewegt werden.
+- Für die Stützräder:
+    - kleine Bohrungen in der Seitenwand; eine auf Höhe der Antriebswelle, zwei unten
+    - Bohrungen minimal kleiner als Kugellager mit minimaler Neigung, damit die Kugellager hineingepresst werden können
+    - Achse muss fest in Lager sitzen
+    - Ein Lager muss in einem Schlitz sitzen, damit Spannung gewährleistet wird
