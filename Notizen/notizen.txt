@@ -1,0 +1,19 @@
+MAßE ALLGEMEIN:
+Maßstab: 1:?
+Kettenumlauf: 350mm
+Breite der Ketten: 20mm
+
+MAßE WANNE:
+Radstand (vorderstes und hinterstes Kettenrad): ca. 11cm, aber erstmal variabel
+Länge der Wanne: 15cm
+Breite der Wanne (exkl. Ketten): 10cm
+Gesamtbreite (inkl. Ketten): 14cm
+
+KONSTRUKTION ALLGEMEIN:
+- Balken für den ESP?
+- ESP auf zweiter Ebene
+- Vorne Motoren, dann Motor Driver, hinten Akku
+
+RÄDER:
+- Antriebsräder vorne, direkt mit Motoren verbunden
+- Wie sollen die anderen Räder angebracht werden, dass sie sich frei drehen können?

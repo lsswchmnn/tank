@@ -19,4 +19,9 @@ Schaltplan erstellen
 
 Lauffähiges Grundmodell bauen
 
-...
+
+## Weitere Teile:
+
+- Panzerketten: https://www.modellbau-seidel.de/index.php?firma=Tamiya&best=0003778 (1,7cm x 42,5cm)
+
+- Evtl. Kabel/Widerstände?
