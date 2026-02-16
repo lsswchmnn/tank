@@ -6,8 +6,8 @@ Breite der Ketten: 15mm
 MAßE WANNE:
 Radstand (vorderstes und hinterstes Kettenrad): ca. 14cm, aber erstmal variabel
 Länge der Wanne: 15cm
-Breite der Wanne (exkl. Ketten): 10cm
-Gesamtbreite (inkl. Ketten): 14cm
+Breite der Wanne (exkl. Ketten): 12cm
+Gesamtbreite (inkl. Ketten): 16cm
 
 KONSTRUKTION ALLGEMEIN:
 - Balken für den ESP?
@@ -16,6 +16,7 @@ KONSTRUKTION ALLGEMEIN:
 
 RÄDER:
 - Antriebsräder vorne, direkt mit Motoren verbunden. Räder dürfen nicht nur "raufgesteckt" sein, damit diese nicht durchdrehen. Außerdem müssen die Räder Zahnräder haben, damit die Ketten auch bewegt werden.
+
 - Für die Stützräder:
     - kleine Bohrungen in der Seitenwand; eine auf Höhe der Antriebswelle, zwei unten
     - Bohrungen minimal kleiner als Kugellager mit minimaler Neigung, damit die Kugellager hineingepresst werden können
