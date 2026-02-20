@@ -40,4 +40,6 @@
 - Ketten == 7 EUR (nicht bezahlt)
 - Jumperkabel == 5,94 EUR (nicht bezahlt) 
 
+## INSGESAMT: 71,49 EUR
+
 - Panzerketten: https://www.modellbau-seidel.de/index.php?firma=Tamiya&best=0003778 (1,7cm x 42,5cm) ODER https://www.modellbau-seidel.de/index.php?firma=Tamiya&best=0443086 (1,5cm x 35cm)
