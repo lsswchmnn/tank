@@ -28,13 +28,13 @@
 - Motoren (2x ins.: 13,89 EUR), 
 - Akku(1x 17,49 EUR) 
 
-## == 46,03 EUR (Bezahlt)
+# == 46,03 EUR (Bezahlt)
 
 - AWG 14 Kabel (1x 1,75 EUR),
 - 3x200mm Metallachsen (1x 4,48EUR),
 - 20pcs Kugellager (1x 2,09 EUR)
 
-## == 8,32 EUR (nicht bezahlt) 
+# == 8,32 EUR (nicht bezahlt) 
 
 - Wago Klemmen == 4,20 EUR (nicht bezahlt) 
 - Ketten == 7 EUR (Nicht bezahlt)
