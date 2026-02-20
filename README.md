@@ -37,6 +37,7 @@
 ### == 8,32 EUR (nicht bezahlt) 
 
 - Wago Klemmen == 4,20 EUR (nicht bezahlt) 
-- Ketten == 7 EUR (Nicht bezahlt)
+- Ketten == 7 EUR (nicht bezahlt)
+- Jumperkabel == 5,94 EUR (nicht bezahlt) 
 
 - Panzerketten: https://www.modellbau-seidel.de/index.php?firma=Tamiya&best=0003778 (1,7cm x 42,5cm) ODER https://www.modellbau-seidel.de/index.php?firma=Tamiya&best=0443086 (1,5cm x 35cm)
