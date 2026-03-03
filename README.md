@@ -37,8 +37,8 @@
 ### == 8,32 EUR (nicht bezahlt) 
 
 - Wago Klemmen == 4,20 EUR (nicht bezahlt) 
-- Ketten == 7 EUR (nicht bezahlt)
-- Jumperkabel == 5,94 EUR (nicht bezahlt) 
+- Ketten == 10,98 EUR (nicht bezahlt)
+- Jumperkabel == 5,94 EUR (nicht bezahlt)
 
 ## INSGESAMT: 71,49 EUR
 
