@@ -22,3 +22,7 @@ RÄDER:
     - Bohrungen minimal kleiner als Kugellager mit minimaler Neigung, damit die Kugellager hineingepresst werden können
     - Achse muss fest in Lager sitzen
     - Ein Lager muss in einem Schlitz sitzen, damit Spannung gewährleistet wird
+
+LÖCHER:
+- Für Achse: 3,3 oder 3,4 mm
+- Für Kugellager: 10,3 mm
