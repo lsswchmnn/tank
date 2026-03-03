@@ -1,0 +1,79 @@
+/*
+ * ESP32 Motor-Test für 2x BTS7960 H-Brücken
+ * Motoren: JGB37-520 (107 RPM)
+ */
+
+// Definition der Pins - Linker Motor
+const int L_MOTOR_R_EN = 26;
+const int L_MOTOR_L_EN = 27;
+const int L_MOTOR_R_PWM = 33;
+const int L_MOTOR_L_PWM = 25;
+
+// Definition der Pins - Rechter Motor
+const int R_MOTOR_R_EN = 13;
+const int R_MOTOR_L_EN = 14;
+const int R_MOTOR_R_PWM = 23;
+const int R_MOTOR_L_PWM = 32;
+
+// PWM Einstellungen für den ESP32
+const int freq = 5000;
+const int resolution = 8; // 0-255
+
+void setup() {
+  Serial.begin(115200);
+  Serial.println("Motor-Test startet...");
+
+  // Alle Pins als Ausgang definieren
+  pinMode(L_MOTOR_R_EN, OUTPUT);
+  pinMode(L_MOTOR_L_EN, OUTPUT);
+  pinMode(L_MOTOR_R_PWM, OUTPUT);
+  pinMode(L_MOTOR_L_PWM, OUTPUT);
+
+  pinMode(R_MOTOR_R_EN, OUTPUT);
+  pinMode(R_MOTOR_L_EN, OUTPUT);
+  pinMode(R_MOTOR_R_PWM, OUTPUT);
+  pinMode(R_MOTOR_L_PWM, OUTPUT);
+
+  // Aktiviere beide H-Brücken (Enable-Pins auf HIGH)
+  digitalWrite(L_MOTOR_R_EN, HIGH);
+  digitalWrite(L_MOTOR_L_EN, HIGH);
+  digitalWrite(R_MOTOR_R_EN, HIGH);
+  digitalWrite(R_MOTOR_L_EN, HIGH);
+
+  Serial.println("H-Brücken aktiviert.");
+}
+
+void loop() {
+  // --- TEST 1: Vorwärts (beide Motoren) ---
+  Serial.println("Beide Motoren: Vorwärts (50% Speed)");
+  analogWrite(L_MOTOR_R_PWM, 128); // Linker Motor Seite R
+  analogWrite(L_MOTOR_L_PWM, 0);
+  analogWrite(R_MOTOR_R_PWM, 128); // Rechter Motor Seite R
+  analogWrite(R_MOTOR_L_PWM, 0);
+  delay(3000);
+
+  // Stopp
+  stopMotors();
+  delay(1000);
+
+  // --- TEST 2: Rückwärts (beide Motoren) ---
+  Serial.println("Beide Motoren: Rückwärts (50% Speed)");
+  analogWrite(L_MOTOR_R_PWM, 0);
+  analogWrite(L_MOTOR_L_PWM, 128); // Linker Motor Seite L
+  analogWrite(R_MOTOR_R_PWM, 0);
+  analogWrite(R_MOTOR_L_PWM, 128); // Rechter Motor Seite L
+  delay(3000);
+
+  // Stopp
+  stopMotors();
+  delay(2000);
+}
+
+// Hilfsfunktion zum Stoppen beider Motoren
+void stopMotors() {
+  Serial.println("Stopp...");
+  analogWrite(L_MOTOR_R_PWM, 0);
+  analogWrite(L_MOTOR_L_PWM, 0);
+  analogWrite(R_MOTOR_R_PWM, 0);
+  analogWrite(R_MOTOR_L_PWM, 0);
+}
