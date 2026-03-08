@@ -1,0 +1,124 @@
+#include <ps5Controller.h>
+
+// Pins für Motor Links (BTS7960)
+const int L_MOTOR_LEN = 27;
+const int L_MOTOR_REN = 26;
+const int L_MOTOR_RPWM = 33; // Vorwärts
+const int L_MOTOR_LPWM = 25; // Rückwärts
+
+// Pins für Motor Rechts (BTS7960)
+const int R_MOTOR_LEN = 14;
+const int R_MOTOR_REN = 13;
+const int R_MOTOR_RPWM = 23; // Vorwärts
+const int R_MOTOR_LPWM = 32; // Rückwärts
+
+// PWM Einstellungen
+const int freq = 5000;
+const int resolution = 8; // 0-255
+
+// Kanäle für ESP32 PWM (LEDC)
+const int chanL_F = 0;
+const int chanL_B = 1;
+const int chanR_F = 2;
+const int chanR_B = 3;
+
+bool emergencyStop = false;
+
+void setup() {
+  Serial.begin(115200);
+
+  // Pin-Modi setzen
+  pinMode(L_MOTOR_LEN, OUTPUT);
+  pinMode(L_MOTOR_REN, OUTPUT);
+  pinMode(R_MOTOR_LEN, OUTPUT);
+  pinMode(R_MOTOR_REN, OUTPUT);
+
+  // Enable-Pins auf HIGH setzen (H-Brücken aktiv)
+  digitalWrite(L_MOTOR_LEN, HIGH);
+  digitalWrite(L_MOTOR_REN, HIGH);
+  digitalWrite(R_MOTOR_LEN, HIGH);
+  digitalWrite(R_MOTOR_REN, HIGH);
+
+  // PWM Kanäle konfigurieren
+  ledcSetup(chanL_F, freq, resolution);
+  ledcSetup(chanL_B, freq, resolution);
+  ledcSetup(chanR_F, freq, resolution);
+  ledcSetup(chanR_B, freq, resolution);
+
+  // PWM Kanäle an Pins binden
+  ledcAttachPin(L_MOTOR_RPWM, chanL_F);
+  ledcAttachPin(L_MOTOR_LPWM, chanL_B);
+  ledcAttachPin(R_MOTOR_RPWM, chanR_F);
+  ledcAttachPin(R_MOTOR_LPWM, chanR_B);
+
+  // Motoren initial stoppen
+  stopAllMotors();
+
+  // PS5 Controller Verbindung starten (MAC-Adresse hier anpassen!)
+  ps5.begin("00:11:22:33:44:55"); 
+  Serial.println("Warte auf PS5 Controller Verbindung...");
+}
+
+void loop() {
+  if (ps5.isConnected()) {
+    
+    // Notstopp-Logik (Kreis-Taste)
+    if (ps5.Circle()) {
+      emergencyStop = true;
+      Serial.println("NOTSTOPP AKTIVIERT!");
+    }
+
+    if (emergencyStop) {
+      stopAllMotors();
+    } else {
+      // Joystick-Werte abgreifen (-128 bis 127)
+      // Wir nutzen nur die Y-Achsen für die Kettensteuerung (Tank-Drive)
+      int leftY = ps5.LStickY();
+      int rightY = ps5.RStickY();
+
+      handleMotor(leftY, chanL_F, chanL_B);  // Linke Kette
+      handleMotor(rightY, chanR_F, chanR_B); // Rechte Kette
+    }
+  } else {
+    // Sicherheit: Stopp, wenn Verbindung abbricht
+    stopAllMotors();
+  }
+}
+
+/**
+ * Hilfsmethode zur Steuerung eines Motors
+ * @param stickValue Der Wert des Joysticks (-128 bis 127)
+ * @param forwardChan LEDC Kanal für Vorwärts
+ * @param backwardChan LEDC Kanal für Rückwärts
+ */
+void handleMotor(int stickValue, int forwardChan, int backwardChan) {
+  int deadzone = 15; // Rauschen unterdrücken
+
+  if (stickValue > deadzone) {
+    // Vorwärts fahren
+    int speed = map(stickValue, deadzone, 127, 0, 255);
+    ledcWrite(forwardChan, speed);
+    ledcWrite(backwardChan, 0);
+  } 
+  else if (stickValue < -deadzone) {
+    // Rückwärts fahren
+    int speed = map(abs(stickValue), deadzone, 128, 0, 255);
+    ledcWrite(forwardChan, 0);
+    ledcWrite(backwardChan, speed);
+  } 
+  else {
+    // Stillstand
+    ledcWrite(forwardChan, 0);
+    ledcWrite(backwardChan, 0);
+  }
+}
+
+/**
+ * Schaltet alle PWM-Ausgänge ab
+ */
+void stopAllMotors() {
+  ledcWrite(chanL_F, 0);
+  ledcWrite(chanL_B, 0);
+  ledcWrite(chanR_F, 0);
+  ledcWrite(chanR_B, 0);
+}
