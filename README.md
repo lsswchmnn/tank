@@ -40,6 +40,14 @@
 - Ketten == 10,98 EUR (nicht bezahlt)
 - Jumperkabel == 5,94 EUR (nicht bezahlt)
 
-## INSGESAMT: 71,49 EUR
+### == 21,12 EUR (nicht bezahlt)
+
+- 3x300mm (1x 3,12 EUR)
+- Schrumpfschläuche 164 pcs. (1x 2,79 EUR)
+- AWG 14 Kabel (1x 3,31 EUR)
+
+### == 9, 22 EUR (nicht bezahlt)
+
+## INSGESAMT: 84,69 EUR
 
 - Panzerketten: https://www.modellbau-seidel.de/index.php?firma=Tamiya&best=0003778 (1,7cm x 42,5cm) ODER https://www.modellbau-seidel.de/index.php?firma=Tamiya&best=0443086 (1,5cm x 35cm)
