@@ -6,8 +6,8 @@
 // Definition der Pins - Linker Motor
 const int L_MOTOR_R_EN = 26;
 const int L_MOTOR_L_EN = 27;
-const int L_MOTOR_R_PWM = 33;
-const int L_MOTOR_L_PWM = 25;
+const int L_MOTOR_R_PWM = 25;
+const int L_MOTOR_L_PWM = 33;
 
 // Definition der Pins - Rechter Motor
 const int R_MOTOR_R_EN = 13;
@@ -46,9 +46,9 @@ void setup() {
 void loop() {
   // --- TEST 1: Vorwärts (beide Motoren) ---
   Serial.println("Beide Motoren: Vorwärts (50% Speed)");
-  analogWrite(L_MOTOR_R_PWM, 128); // Linker Motor Seite R
+  analogWrite(L_MOTOR_R_PWM, 256); // Linker Motor Seite R
   analogWrite(L_MOTOR_L_PWM, 0);
-  analogWrite(R_MOTOR_R_PWM, 128); // Rechter Motor Seite R
+  analogWrite(R_MOTOR_R_PWM, 256); // Rechter Motor Seite R
   analogWrite(R_MOTOR_L_PWM, 0);
   delay(3000);
 
@@ -59,9 +59,9 @@ void loop() {
   // --- TEST 2: Rückwärts (beide Motoren) ---
   Serial.println("Beide Motoren: Rückwärts (50% Speed)");
   analogWrite(L_MOTOR_R_PWM, 0);
-  analogWrite(L_MOTOR_L_PWM, 128); // Linker Motor Seite L
+  analogWrite(L_MOTOR_L_PWM, 256); // Linker Motor Seite L
   analogWrite(R_MOTOR_R_PWM, 0);
-  analogWrite(R_MOTOR_L_PWM, 128); // Rechter Motor Seite L
+  analogWrite(R_MOTOR_L_PWM, 256); // Rechter Motor Seite L
   delay(3000);
 
   // Stopp
