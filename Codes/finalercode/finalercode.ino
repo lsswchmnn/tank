@@ -135,7 +135,7 @@ if (myGamepad && myGamepad->isConnected()) {
 
 
 // Linker Motor → axisY() (negativ = Stick oben = vorwärts)
-int leftY = -myGamepad->axisY();
+int leftY = myGamepad->axisY();
 // Rechter Motor → axisRY() (negativ = Stick oben = vorwärts)
 int rightY = -myGamepad->axisRY();
 
